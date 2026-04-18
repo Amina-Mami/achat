@@ -2,6 +2,6 @@ FROM wodby/openjdk:17-alpine
 
 EXPOSE 8089
 
-ADD target/achat-1.0.0.jar achat-1.0.0.jar
+COPY target/*.jar app.jar
 
-ENTRYPOINT ["java","-jar","/achat-1.0.0.jar"]
+ENTRYPOINT ["java","-jar","/app.jar"]
