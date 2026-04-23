@@ -33,30 +33,9 @@ services:
         "spring.jpa.hibernate.ddl-auto":"update"
       }'
 
-  cadvisor:
-    image: gcr.io/cadvisor/cadvisor
-    container_name: cadvisor
-    ports:
-      - "8787:8080"
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:rw
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
-
-  prometheus:
-    image: prom/prometheus
-    container_name: prometheus
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-
-  grafana:
-    image: grafana/grafana
-    container_name: grafana
-    ports:
-      - "3000:3000"
-
 volumes:
   db:
+
+
+
+
